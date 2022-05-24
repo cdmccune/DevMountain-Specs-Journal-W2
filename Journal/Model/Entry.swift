@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Entry {
+class Entry: Codable {
     
     init(timestamp: Date = Date(), title: String, body: String,id: UUID = UUID()) {
         self.timestamp = timestamp

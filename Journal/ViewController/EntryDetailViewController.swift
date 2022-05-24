@@ -38,6 +38,7 @@ class EntryDetailViewController: UIViewController {
         } else {
             EntryController.shared.createEntryWith(title: titleTextField.text!, body: bodyTextView.text!)
         }
+        EntryController.shared.saveToPersistentStorage()
         self.navigationController?.popViewController(animated: true)
         
     }

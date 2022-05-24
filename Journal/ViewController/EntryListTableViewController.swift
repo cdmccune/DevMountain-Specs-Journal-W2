@@ -15,6 +15,7 @@ class EntryListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.reloadData()
+        EntryController.shared.loadFromPersistentStorage()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,6 +51,7 @@ class EntryListTableViewController: UITableViewController {
                 
                 // Delete the row from the data source
                 tableView.deleteRows(at: [indexPath], with: .fade)
+                EntryController.shared.saveToPersistentStorage()
                 
             }
         }
