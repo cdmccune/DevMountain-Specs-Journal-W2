@@ -20,18 +20,28 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Skd-gE-Rgg">
                                 <rect key="frame" x="0.0" y="84" width="414" height="100"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sOl-Vx-jfD">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sOl-Vx-jfD">
                                         <rect key="frame" x="41.5" y="12" width="331" height="76"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Journal Title Here..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uDN-OK-Iep">
-                                                <rect key="frame" x="0.0" y="0.0" width="331" height="34"/>
+                                                <rect key="frame" x="69.5" y="0.0" width="192.5" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="journalTItleChanged:" destination="CWU-EG-H5z" eventType="editingChanged" id="UaL-fp-pmP"/>
+                                                </connections>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lEa-T7-LNB">
-                                                <rect key="frame" x="0.0" y="42" width="331" height="34"/>
+                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lEa-T7-LNB">
+                                                <rect key="frame" x="88" y="42" width="155" height="34"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Create New Journal"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Create New Journal">
+                                                    <fontDescription key="titleFontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="14"/>
+                                                </buttonConfiguration>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="createNewJournalButtonTapped:" destination="CWU-EG-H5z" eventType="touchUpInside" id="vp0-bf-mfj"/>
                                                 </connections>
@@ -99,6 +109,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="I5v-by-GPi"/>
                     <connections>
+                        <outlet property="createNewJournalButton" destination="lEa-T7-LNB" id="4Zr-sD-Hyl"/>
                         <outlet property="journalListTableView" destination="X4t-d7-l3K" id="BTE-xd-9Zo"/>
                         <outlet property="journalTitleTextField" destination="uDN-OK-Iep" id="ouy-Il-hiy"/>
                     </connections>
@@ -137,6 +148,11 @@
                                 </connections>
                             </tableViewCell>
                         </prototypes>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="25"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                         <connections>
                             <outlet property="dataSource" destination="cQI-wu-WnX" id="di4-65-gJE"/>
                             <outlet property="delegate" destination="cQI-wu-WnX" id="zLz-9c-Yqh"/>

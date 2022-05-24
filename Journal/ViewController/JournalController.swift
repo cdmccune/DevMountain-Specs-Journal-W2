@@ -7,14 +7,14 @@
 
 import Foundation
 
-class JournalContoller: Codable {
+class JournalController: Codable {
     
-    static let shared = JournalContoller()
+    static let shared = JournalController()
     
     var journals: [Journal] = []
     
     func createJournalWith(title: String) {
-        JournalContoller.shared.journals.append(Journal(title: title))
+        JournalController.shared.journals.append(Journal(title: title))
         
         saveToPersistentStorage()
     }
