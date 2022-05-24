@@ -11,6 +11,9 @@
 		24329B6D283C2BC300DEF82C /* EntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24329B6C283C2BC300DEF82C /* EntryController.swift */; };
 		24329B6F283C303500DEF82C /* EntryListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24329B6E283C303500DEF82C /* EntryListTableViewController.swift */; };
 		24329B78283C48BD00DEF82C /* EntryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24329B77283C48BD00DEF82C /* EntryDetailViewController.swift */; };
+		243DEC61283D58B400B55D8B /* Journal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243DEC60283D58B400B55D8B /* Journal.swift */; };
+		243DEC63283D591100B55D8B /* JournalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243DEC62283D591100B55D8B /* JournalController.swift */; };
+		243DEC65283D792400B55D8B /* JournalListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243DEC64283D792400B55D8B /* JournalListViewController.swift */; };
 		7EDA120F259D233600BBD350 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDA120E259D233600BBD350 /* AppDelegate.swift */; };
 		7EDA1211259D233600BBD350 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDA1210259D233600BBD350 /* SceneDelegate.swift */; };
 		7EDA1216259D233600BBD350 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EDA1214259D233600BBD350 /* Main.storyboard */; };
@@ -23,6 +26,9 @@
 		24329B6C283C2BC300DEF82C /* EntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryController.swift; sourceTree = "<group>"; };
 		24329B6E283C303500DEF82C /* EntryListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryListTableViewController.swift; sourceTree = "<group>"; };
 		24329B77283C48BD00DEF82C /* EntryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailViewController.swift; sourceTree = "<group>"; };
+		243DEC60283D58B400B55D8B /* Journal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Journal.swift; sourceTree = "<group>"; };
+		243DEC62283D591100B55D8B /* JournalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalController.swift; sourceTree = "<group>"; };
+		243DEC64283D792400B55D8B /* JournalListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalListViewController.swift; sourceTree = "<group>"; };
 		7EDA120B259D233600BBD350 /* Journal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Journal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EDA120E259D233600BBD350 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7EDA1210259D233600BBD350 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +53,7 @@
 			isa = PBXGroup;
 			children = (
 				24329B6A283C2ABA00DEF82C /* Entry.swift */,
+				243DEC60283D58B400B55D8B /* Journal.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -64,6 +71,8 @@
 			children = (
 				24329B6E283C303500DEF82C /* EntryListTableViewController.swift */,
 				24329B77283C48BD00DEF82C /* EntryDetailViewController.swift */,
+				243DEC62283D591100B55D8B /* JournalController.swift */,
+				243DEC64283D792400B55D8B /* JournalListViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -186,11 +195,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				243DEC65283D792400B55D8B /* JournalListViewController.swift in Sources */,
 				24329B6B283C2ABA00DEF82C /* Entry.swift in Sources */,
+				243DEC63283D591100B55D8B /* JournalController.swift in Sources */,
 				24329B6F283C303500DEF82C /* EntryListTableViewController.swift in Sources */,
 				7EDA120F259D233600BBD350 /* AppDelegate.swift in Sources */,
 				24329B6D283C2BC300DEF82C /* EntryController.swift in Sources */,
 				24329B78283C48BD00DEF82C /* EntryDetailViewController.swift in Sources */,
+				243DEC61283D58B400B55D8B /* Journal.swift in Sources */,
 				7EDA1211259D233600BBD350 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -345,7 +357,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = .com.Journal;
+				PRODUCT_BUNDLE_IDENTIFIER = .com.CurtsJournalApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -364,7 +376,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = .com.Journal;
+				PRODUCT_BUNDLE_IDENTIFIER = .com.CurtsJournalApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -9,56 +9,19 @@ import Foundation
 
 class EntryController {
     
-    static let shared = EntryController()
-    var entries : [Entry] = [
-//        Entry(title: "To-dos", body: "dfadfadsf"),
-//        Entry(title: "2 To-dos", body: "dfadfadsf"),
-//        Entry(title: "3 To-dos", body: "dfadfadsf"),
-//        Entry(title: "4 To-dos", body: "dfadfadsf")
-    ]
-    
-    func createEntryWith (title:String, body:String) {
+    static func createEntryWith (title:String, body:String, journal: Journal) {
         let entry = Entry(title: title, body: body)
         
-        entries.append(entry)
+        JournalContoller.shared.addEntryTo(journal: journal, entry)
     }
     
-    func deleteEntry (entry: Entry){
-        guard let index = entries.firstIndex(of: entry) else {
-            return
-        }
-        entries.remove(at: index)
+    static func deleteEntry (entry: Entry, journal:Journal){
+        JournalContoller.shared.removeEntryFrom(journal: journal, entry)
     }
     
-    //Persistence
-    
-    private func fileURL() -> URL {
-        let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        let documentsDirectoryURL = urls[0].appendingPathComponent("Journal.json")
-        return documentsDirectoryURL
+    static func update (entry: Entry, title: String, body: String) {
+        entry.title = title
+        entry.body = body
+        JournalContoller.shared.saveToPersistentStorage()
     }
-    
-    func saveToPersistentStorage() {
-        let je = JSONEncoder()
-        
-        do {
-            let data = try je.encode(entries)
-            try data.write(to: fileURL())
-        } catch let e {print("Error saving to storage: \(e)")}
-    }
-    
-    func loadFromPersistentStorage() {
-        let jd = JSONDecoder()
-        
-        do {
-            let data = try Data(contentsOf: fileURL())
-            let entry = try jd.decode([Entry].self, from: data)
-            self.entries = entry
-        } catch let e {
-            print("Error loading entries: \(e)")
-        }
-    }
-    
-    
-    
 }

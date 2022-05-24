@@ -13,6 +13,7 @@ class EntryDetailViewController: UIViewController {
     @IBOutlet var bodyTextView: UITextView!
     
     var entry: Entry?
+    var journal: Journal?
     
     func updateViews() {
         if let entry = entry {
@@ -33,13 +34,29 @@ class EntryDetailViewController: UIViewController {
     }
     
     @IBAction func saveButtonTapped(_ sender: Any) {
-        if let entry = entry {
-            print("will be implemented tomorrow")
-        } else {
-            EntryController.shared.createEntryWith(title: titleTextField.text!, body: bodyTextView.text!)
+        guard let journal = journal else {
+            self.navigationController?.popViewController(animated: true)
+            return
         }
-        EntryController.shared.saveToPersistentStorage()
-        self.navigationController?.popViewController(animated: true)
+        
+        if let entry = entry {
+            if let title = titleTextField.text, let body = bodyTextView.text {
+                if title != "" && body != "" {
+                    EntryController.update(entry: entry, title: title, body: body)
+                    self.navigationController?.popViewController(animated: true)
+                }
+            }
+        } else {
+            
+            if let title = titleTextField.text, let body = bodyTextView.text {
+                if title != "" && body != "" {
+                    EntryController.createEntryWith(title: title, body: body, journal: journal)
+                    self.navigationController?.popViewController(animated: true)
+                }
+            }
+            
+        }
+        
         
     }
     
